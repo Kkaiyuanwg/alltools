@@ -59,7 +59,7 @@ for ($i = 0; $i -lt $length; $i++) {
     Write-Host -NoNewline ">" -ForegroundColor Cyan
     Write-Host $loadingBar.Substring($i) -ForegroundColor White
     Start-Sleep -Milliseconds $stepTime
-    Write-Host "`b" * ($length + 2)
+    Write-Host "`r"
 }
 Clear-Host
 
