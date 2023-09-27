@@ -70,6 +70,8 @@ Write-Host "1. Install intel and nvidia drivers"
 Write-Host "2. Activate windwos with MAS by @massgravel"
 Write-Host "3. Everything"
 
+Write-Host "Hi bro https://dlcdnets.asus.com/pub/ASUS/GamingNB/Image/Driver/Graphics/25861/Graphic_DCH_ROG_NVIDIA_Z_V30.0.14.9649_25861_1.exe?model=ASUS%20TUF%20Gaming%20F15"
+
 $option = Read-Host "Please choose a number (1, 2, 3): "
 
 if ($option -eq "1") {
