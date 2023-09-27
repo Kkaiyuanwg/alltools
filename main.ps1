@@ -40,7 +40,7 @@ Function MAShwid {
 
 Clear-Host
 
-Write-Host "                                                        
+Write-Host -ForegroundColor Cyan "                                                        
  _ _ _ _____ __    _____ _____ _____ _____                                     
 | | | |   __|  |  |     |     |     |   __|                                    
 | | | |   __|  |__|   --|  |  | | | |   __|                                    
