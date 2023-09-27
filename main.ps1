@@ -11,13 +11,11 @@ $rand = Get-Random -Maximum 99999999
 $isAdmin = [bool]([Security.Principal.WindowsIdentity]::GetCurrent().Groups -match 'S-1-5-32-544')
 
 Function Drivers {
-    $FilePath = if ($isAdmin) { "$env:SystemRoot\Temp\AllTools_$rand.cmd" } else { "$env:TEMP\AllTools_$rand.cmd" } 
+    $FilePath = if ($isAdmin) { "$env:SystemRoot\Temp\$rand\" } else { "$env:TEMP\$rand\" } 
     foreach ($url in $urls) {
-        $fileName = [System.IO.Path]::GetFileName($url)
-        $outputFilePath = Join-Path -Path $FilePath -ChildPath $fileName
         
         Write-Host "Downloading $fileName..."
-        Invoke-WebRequest -Uri $url -OutFile $outputFilePath
+        Invoke-WebRequest -Uri $url -OutFile $FilePath
         Write-Host "Downloaded $fileName to $outputFilePath"
     }
 }
@@ -34,7 +32,7 @@ Function MAShwid {
 
     Start-Process $FilePath $ScriptArgs -Wait
 
-    $FilePaths = @("$env:TEMP\MAS*.cmd", "$env:SystemRoot\Temp\MAS*.cmd")
+    $FilePaths = @("$env:TEMP\AllTools*.cmd", "$env:SystemRoot\Temp\AllTools*.cmd")
     foreach ($FilePath in $FilePaths) { Get-Item $FilePath | Remove-Item }
 }
 
