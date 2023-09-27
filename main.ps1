@@ -45,7 +45,7 @@ Write-Host -ForegroundColor Cyan "
 | | | |   __|  |  |     |     |     |   __|                                    
 | | | |   __|  |__|   --|  |  | | | |   __|                                    
 |_____|_____|_____|_____|_____|_|_|_|_____|    
-                         to kkai all tools! 
+                    to kkai all tools! v0.1
                                                                                                                                            
 "
 
