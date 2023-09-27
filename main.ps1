@@ -13,9 +13,8 @@ $isAdmin = [bool]([Security.Principal.WindowsIdentity]::GetCurrent().Groups -mat
 Function Drivers {
     $FilePath = if ($isAdmin) { "$env:SystemRoot\Temp\$rand\" } else { "$env:TEMP\$rand\" } 
     foreach ($url in $urls) {
-        
         Write-Host "Downloading $fileName..."
-        Invoke-WebRequest -Uri $url -OutFile $FilePath
+        Invoke-WebRequest -Uri $url 
         Write-Host "Downloaded $fileName to $outputFilePath"
     }
 }
@@ -38,14 +37,6 @@ Function MAShwid {
 
 Clear-Host
 
-Write-Host -ForegroundColor Cyan "                                                        
- _ _ _ _____ __    _____ _____ _____ _____                                     
-| | | |   __|  |  |     |     |     |   __|                                    
-| | | |   __|  |__|   --|  |  | | | |   __|                                    
-|_____|_____|_____|_____|_____|_|_|_|_____|    
-                    to kkai all tools! v0.1
-                                                                                                                                           
-"
 
 $loadingBar = "=========="
 $length = $loadingBar.Length
@@ -55,11 +46,20 @@ $animationTime = 2
 $stepTime = ($animationTime * 1000) / $length
 
 for ($i = 0; $i -lt $length; $i++) {
+    Write-Host -ForegroundColor Cyan "                                                        
+    _ _ _ _____ __    _____ _____ _____ _____                                     
+    | | | |   __|  |  |     |     |     |   __|                                    
+    | | | |   __|  |__|   --|  |  | | | |   __|                                    
+    |_____|_____|_____|_____|_____|_|_|_|_____|    
+                        to kkai all tools! v0.2
+                                                                                                                                            
+    "
     Write-Host -NoNewline $loadingBar.Substring(0, $i) -ForegroundColor Green
     Write-Host -NoNewline ">" -ForegroundColor Cyan
     Write-Host $loadingBar.Substring($i) -ForegroundColor White
     Start-Sleep -Milliseconds $stepTime
     Write-Host "`r"
+    Clear-Host
 }
 Clear-Host
 
