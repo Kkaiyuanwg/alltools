@@ -37,7 +37,20 @@ Function MAShwid {
     $FilePaths = @("$env:TEMP\MAS*.cmd", "$env:SystemRoot\Temp\MAS*.cmd")
     foreach ($FilePath in $FilePaths) { Get-Item $FilePath | Remove-Item }
 }
-Write-Host "WELCOME TO KKAI ALL TOOLS"
+
+Clear-Host
+
+Write-Host "                                                        
+ _ _ _ _____ __    _____ _____ _____ _____                                     
+| | | |   __|  |  |     |     |     |   __|                                    
+| | | |   __|  |__|   --|  |  | | | |   __|                                    
+|_____|_____|_____|_____|_____|_|_|_|_____|    
+                         to kkai all tools! 
+                                                                                                                                           
+"
+
+Start-Sleep -Seconds 3
+Clear-Host
 
 Write-Host "Select one option:"
 Write-Host "1. Install intel and nvidia drivers"
