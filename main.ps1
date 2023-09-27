@@ -46,11 +46,12 @@ Write-Host "3. Everything"
 $option = Read-Host "Please choose a number (1, 2, 3): "
 
 if ($option -eq "1") {
-    Write-Host "Elegiste la Opción A. Realizando función para Opción A..."
+    Drivers
 } elseif ($option -eq "2") {
-    Write-Host "Elegiste la Opción B. Realizando función para Opción B..."
+    MAShwid
 } elseif ($option -eq "3") {
-
+    Drivers
+    MAShwid
 } else {
     Write-Host "Unvalid number, choose between: (1, 2, 3)"
 }
