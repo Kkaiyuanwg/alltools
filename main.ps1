@@ -49,7 +49,20 @@ Write-Host "
                                                                                                                                            
 "
 
-Start-Sleep -Seconds 3
+$loadingBar = "=========="
+$length = $loadingBar.Length
+
+# Calculate the time interval for each step
+$animationTime = 2
+$stepTime = ($animationTime * 1000) / $length
+
+for ($i = 0; $i -lt $length; $i++) {
+    Write-Host -NoNewline $loadingBar.Substring(0, $i) -ForegroundColor Green
+    Write-Host -NoNewline ">" -ForegroundColor Cyan
+    Write-Host $loadingBar.Substring($i) -ForegroundColor White
+    Start-Sleep -Milliseconds $stepTime
+    Write-Host "`b" * ($length + 2)
+}
 Clear-Host
 
 Write-Host "Select one option:"
