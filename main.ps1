@@ -82,6 +82,7 @@ Function GetApps {
     Invoke-Expression "winget install Brave.Brave"
     Invoke-Expression "winget install Discord.Discord"
     Invoke-Expression "winget install REALiX.HWiNFO"
+    Clear-Host
 }
 
 Clear-Host
