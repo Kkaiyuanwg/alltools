@@ -87,7 +87,7 @@ $loadingBar = "=========="
 $length = $loadingBar.Length
 
 # Calculate the time interval for each step
-$animationTime = 2
+$animationTime = 1
 $stepTime = ($animationTime * 1000) / $length
 
 for ($i = 0; $i -lt $length; $i++) {
@@ -113,9 +113,9 @@ Write-Host "Select one option:"
 Write-Host "1. Install drivers"
 Write-Host "2. Activate windows with MAS by @massgravel"
 Write-Host "3. Install common applications (Brave, vscode, Discord, hwinfo)"
-Write-Host "3. Everything"
+Write-Host "4. Everything"
 
-$option = Read-Host "Please choose a number (1, 2, 3): "
+$option = Read-Host "Please choose a number (1, 2, 3, 4): "
 
 if ($option -eq "1") {
     Drivers
@@ -128,5 +128,5 @@ if ($option -eq "1") {
     MAShwid
     GetApps
 } else {
-    Write-Host "Unvalid number, choose between: (1, 2, 3)"
+    Write-Host "Unvalid number, choose between: (1, 2, 3, 4)"
 }
