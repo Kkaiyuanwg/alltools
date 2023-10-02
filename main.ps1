@@ -1,7 +1,6 @@
 $ErrorActionPreference = "Stop"
 [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
 
-
 $amdd = "https://drivers.amd.com/drivers/installer/23.20/whql/amd-software-adrenalin-edition-23.9.3-minimalsetup-230926_web.exe"
 $inteld = "https://downloadmirror.intel.com/788789/gfx_win_101.4826.exe"
 $nvidiagd = "https://www.nvidia.es/content/DriverDownloads/confirmation.php?url=/Windows/537.42/537.42-notebook-win10-win11-64bit-international-dch-whql.exe&lang=es&type=geforcem"
@@ -12,10 +11,6 @@ $rand = Get-Random -Maximum 99999999
 $isAdmin = [bool]([Security.Principal.WindowsIdentity]::GetCurrent().Groups -match 'S-1-5-32-544')
 $cpuInfo = Get-WmiObject -Class Win32_Processor | Select-Object -Property Name
 $gpuInfo = Get-WmiObject -Class Win32_VideoController | Select-Object -Property Name
-
-Function Detectsys {
-    
-}
 
 Function Drivers {
     Write-Host "Checking for GPU or CPU..."
