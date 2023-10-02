@@ -106,6 +106,7 @@ for ($i = 0; $i -lt $length; $i++) {
     Write-Host "`r"
     Clear-Host
 }
+
 Clear-Host
 
 Write-Host "Select one option:"
@@ -113,7 +114,6 @@ Write-Host "1. Install drivers"
 Write-Host "2. Activate windows with MAS by @massgravel"
 Write-Host "3. Install common applications (Brave, vscode, Discord, hwinfo)"
 Write-Host "3. Everything"
-Dete
 
 $option = Read-Host "Please choose a number (1, 2, 3): "
 
